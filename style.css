@@ -1,0 +1,67 @@
+:root{--bg:#f4f5fb;--card:#fff;--ink:#1d1f2e;--muted:#646a85;--brand:#4f46e5;--brand-d:#3730a3;--ok:#157a4b;--okbg:#e3f6ec;--bad:#b3261e;--badbg:#fdeceb;--line:#d9dcec;--r:12px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Segoe UI",system-ui,Arial,sans-serif}
+.top{background:var(--brand-d);color:#fff;padding:16px 20px}
+.top h1{margin:0 0 8px;font-size:1.4rem}
+.top nav a{color:#dcd9ff;margin-right:16px;text-decoration:none}
+.top nav a:hover,.top nav a:focus-visible{color:#fff;text-decoration:underline}
+main{max-width:1100px;margin:0 auto;padding:16px}
+.card{background:var(--card);border-radius:var(--r);padding:20px;margin-bottom:24px;box-shadow:0 2px 8px rgba(30,30,80,.08)}
+h2{margin-top:0;color:var(--brand-d)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:12px 0}
+.stats{display:flex;flex-wrap:wrap;gap:18px;color:var(--muted)}
+.stats strong{color:var(--ink)}
+.duel{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.item{border:2px solid var(--line);border-radius:var(--r);padding:16px;text-align:center;min-height:96px}
+.item b{display:block;font-size:1.1rem}
+.item .price{font-size:1.6rem;color:var(--brand-d)}
+.msg{min-height:1.5em;font-weight:600}
+.msg.good,.summary.good{color:var(--ok)}
+.msg.bad{color:var(--bad)}
+.warn{color:var(--bad);min-height:1.5em;margin:0}
+.btn{background:var(--brand);color:#fff;border:2px solid var(--brand);border-radius:8px;padding:9px 16px;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--brand-d);border-color:var(--brand-d)}
+.btn.ghost{background:#fff;color:var(--brand)}
+.btn.ghost:hover{background:#ecebff}
+.btn[aria-pressed="true"]{background:var(--brand-d);color:#fff}
+.btn:disabled{background:#c9cbd8;border-color:#c9cbd8;color:#fff;cursor:not-allowed}
+:is(button,input,select,a):focus-visible{outline:3px solid #f5a623;outline-offset:2px}
+.final{padding:12px;border-radius:8px;margin-top:8px;font-weight:700}
+.final.win{background:var(--okbg);color:var(--ok)}
+.final.loss{background:var(--badbg);color:var(--bad)}
+label{font-weight:600;font-size:.92rem;display:flex;flex-direction:column;gap:4px}
+input,select{font:inherit;padding:8px 10px;border:2px solid var(--line);border-radius:8px;background:#fff;min-width:0}
+input:hover,select:hover{border-color:#a9acd0}
+.controls label{min-width:150px}
+.progress-box{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+progress{width:260px;max-width:100%;height:16px;accent-color:var(--ok)}
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.col{background:#f0f1fa;border-radius:var(--r);padding:12px;min-height:120px}
+.col h3{margin:0 0 10px;display:flex;justify-content:space-between;font-size:1rem}
+.col.full h3 span{color:var(--bad)}
+.cards{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.kcard{background:#fff;border:1px solid var(--line);border-left:6px solid var(--muted);border-radius:8px;padding:10px}
+.kcard.p3{border-left-color:var(--bad)}.kcard.p2{border-left-color:#e0a100}.kcard.p1{border-left-color:var(--ok)}
+.kcard:hover{box-shadow:0 2px 8px rgba(30,30,80,.15)}
+.kcard.done .ttl{text-decoration:line-through;color:var(--muted)}
+.ttl{font-weight:600}
+.meta{font-size:.82rem;color:var(--muted);margin:4px 0 8px}
+.badge{background:#ecebff;color:var(--brand-d);border-radius:20px;padding:1px 8px;margin-right:4px}
+.badge.urgent{background:var(--badbg);color:var(--bad)}
+.kcard .btn{padding:3px 10px}
+.empty{color:var(--muted);font-style:italic;margin:0}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:24px}
+.field{display:flex;flex-direction:column;margin-bottom:12px}
+fieldset{border:1px solid var(--line);border-radius:8px;margin:0 0 12px}
+input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--bad);background:var(--badbg)}
+input.valid,select.valid{border-color:var(--ok)}
+.err{color:var(--bad);min-height:1.2em;font-size:.85rem}
+.summary{color:var(--bad);font-weight:700;margin:0 0 10px;min-height:1.4em}
+.points strong{font-size:1.2rem;color:var(--brand-d)}
+.points.over strong{color:var(--bad)}
+.char{border:3px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:14px;background:#fff}
+.char h4{margin:0 0 6px;font-size:1.2rem}
+.char.red{border-color:#d33}.char.blue{border-color:#2f6fdb}.char.green{border-color:#2a9d5c}.char.gold{border-color:#d9a400}
+.char.final-card{background:var(--okbg)}
+.char ul{margin:6px 0 0;padding-left:18px}
+@media (max-width:700px){.duel,.board,.split{grid-template-columns:1fr}.card{padding:14px}main{padding:10px}}

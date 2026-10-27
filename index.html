@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assignment 5 – JavaScript Basics</title>
+<link rel="stylesheet" href="style.css">
+<script src="task1.js" defer></script>
+<script src="task2.js" defer></script>
+<script src="task3.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <h1>Assignment 5: JavaScript Basics</h1>
+  <nav aria-label="Tasks"><a href="#task1">1. Game</a><a href="#task2">2. Kanban</a><a href="#task3">3. Character</a></nav>
+</header>
+<main>
+<section id="task1" class="card" aria-labelledby="t1h">
+  <h2 id="t1h">Task 1. Higher or Lower: gadget prices</h2>
+  <div class="stats">
+    <span>Lives: <strong id="g-lives"></strong></span>
+    <span>Streak: <strong id="g-streak"></strong></span>
+    <span>Best: <strong id="g-best"></strong></span>
+  </div>
+  <div class="duel">
+    <div class="item" id="g-current"></div>
+    <div class="item" id="g-next"></div>
+  </div>
+  <p id="g-msg" class="msg" aria-live="polite"></p>
+  <p id="g-warn" class="warn" role="alert"></p>
+  <div class="row">
+    <button type="button" class="btn" data-guess="higher" id="g-higher">▲ Higher</button>
+    <button type="button" class="btn" data-guess="lower" id="g-lower">▼ Lower</button>
+    <button type="button" class="btn ghost" id="g-restart">Restart</button>
+  </div>
+</section>
+
+<section id="task2" class="card" aria-labelledby="t2h">
+  <h2 id="t2h">Task 2. Kanban board</h2>
+  <div class="row controls">
+    <label>Search <input type="search" id="k-search" placeholder="Title…"></label>
+    <label>Tag <select id="k-tag"></select></label>
+    <button type="button" class="btn ghost" id="k-sort" aria-pressed="false">Sort by priority</button>
+  </div>
+  <div class="progress-box">
+    <progress id="k-progress" value="0" max="1"></progress>
+    <span id="k-progress-text"></span>
+  </div>
+  <p id="k-msg" class="msg" aria-live="polite"></p>
+  <div id="k-board" class="board"></div>
+</section>
+
+<section id="task3" class="card" aria-labelledby="t3h">
+  <h2 id="t3h">Task 3. Character creator</h2>
+  <div class="split">
+    <form id="c-form" novalidate>
+      <p id="c-summary" class="summary" role="alert" tabindex="-1"></p>
+      <div class="field"><label for="c-name">Name</label>
+        <input id="c-name" name="name" type="text" required minlength="3" maxlength="16" autocomplete="off">
+        <small class="err" id="c-name-err"></small></div>
+      <div class="field"><label for="c-class">Class</label>
+        <select id="c-class" name="class" required>
+          <option value="">Choose…</option><option value="mage">Mage</option><option value="warrior">Warrior</option><option value="rogue">Rogue</option>
+        </select><small class="err" id="c-class-err"></small></div>
+      <div class="field"><label for="c-color">Color</label>
+        <select id="c-color" name="color" required>
+          <option value="">Choose…</option><option value="red">Red</option><option value="blue">Blue</option><option value="green">Green</option><option value="gold">Gold</option>
+        </select><small class="err" id="c-color-err"></small></div>
+      <fieldset class="skills"><legend>Skills (exactly 20 points, 1–10 each)</legend>
+        <div class="field"><label for="c-strength">Strength</label><input id="c-strength" name="strength" type="number" min="1" max="10" step="1" required><small class="err" id="c-strength-err"></small></div>
+        <div class="field"><label for="c-agility">Agility</label><input id="c-agility" name="agility" type="number" min="1" max="10" step="1" required><small class="err" id="c-agility-err"></small></div>
+        <div class="field"><label for="c-magic">Magic</label><input id="c-magic" name="magic" type="number" min="1" max="10" step="1" required><small class="err" id="c-magic-err"></small></div>
+        <div class="field"><label for="c-vitality">Vitality</label><input id="c-vitality" name="vitality" type="number" min="1" max="10" step="1" required><small class="err" id="c-vitality-err"></small></div>
+        <p class="points">Points left: <strong id="c-left">20</strong></p>
+        <small class="err" id="c-points-err"></small>
+      </fieldset>
+      <button type="submit" class="btn">Create character</button>
+    </form>
+    <div>
+      <h3>Live preview</h3>
+      <div id="c-preview" class="char"></div>
+      <h3>Result</h3>
+      <div id="c-result" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+</main>
+</body>
+</html>
